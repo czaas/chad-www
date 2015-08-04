@@ -1,0 +1,1 @@
+app.applyListeners=function(){$(".linkBox").on("click","a.zoom",function(n){n.preventDefault();var o=$(this),t=(o.data("position"),o.attr("href"));$("#slideShow").toggleClass("on").children(".inner").css("background","url("+t+") no-repeat top left")}),$("#slideShow").on("click",function(){$(this).toggleClass("on")})};
