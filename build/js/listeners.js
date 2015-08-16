@@ -1,14 +1,27 @@
-app.applyListeners = function(){
-	$('.linkBox').on('click', 'a.zoom', function(e){
-		e.preventDefault();
-		var currentLink = $(this),
-			position = currentLink.data('position'),
-			src = currentLink.attr('href');
-			$('#slideShow').toggleClass('on')
-			.children('.inner').css('background', 'url(' + src + ') no-repeat top left');
-	});
+app.applyListenersTo = function(feedParent){
 
-	$('#slideShow').on('click', function(){
-		$(this).toggleClass('on');
-	});
+	var slideShow = document.getElementById('close');
+	var nextBtn = document.getElementById('next');
+	var prevBtn = document.getElementById('prev');
+
+	nextBtn.addEventListener('click', app.slideShow.nextImage);
+	prevBtn.addEventListener('click', app.slideShow.prevImage);
+
+	slideShow.addEventListener('click', app.slideShow.close);
+	addListener('zoom', getPosition);
+
+
+	function addListener(className, cb){
+		var targetedClass = document.getElementsByClassName(className);	
+
+		for(var i = 0; i < targetedClass.length; i++){
+			targetedClass[i].addEventListener('click', cb, false);
+		}
+	}
+
+	function getPosition(e, cb){
+		var imgPosition = this.attributes['data-position'].value;
+		app.slideShow.start(imgPosition);	
+	}
+
 };
