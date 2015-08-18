@@ -1,14 +1,21 @@
 app.applyListenersTo = function(feedParent){
 
-	var slideShow = document.getElementById('close');
-	var nextBtn = document.getElementById('next');
-	var prevBtn = document.getElementById('prev');
+	var slideShow = document.getElementById('close'),
+		nextBtn = document.getElementById('next'),
+		prevBtn = document.getElementById('prev'),
+		viewAll = document.getElementById('viewAll'),
+		sectionFeed = document.getElementById('feed');
 
 	nextBtn.addEventListener('click', app.slideShow.nextImage);
 	prevBtn.addEventListener('click', app.slideShow.prevImage);
 
 	slideShow.addEventListener('click', app.slideShow.close);
 	addListener('zoom', getPosition);
+
+	viewAll.addEventListener('click', function(){
+		sectionFeed.className = 'showAll';
+		this.className = 'hide';
+	});
 
 
 	function addListener(className, cb){

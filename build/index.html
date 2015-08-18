@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-<div id="slideShow" class="fur test  arr">
+<div id="slideShow" class=" ">
 	<div class="inner">
 		<span>
 			<i class="fa fa-times-circle-o" id="close"></i>
@@ -27,30 +27,35 @@
 		</div>
 	</header>
 
-	<section>
+	<section id="feed" class=" ">
 		<div id="feedWrapper">
 			<ul id="myFeed"></li>
 		</div>
+	</section>
+	<section class="content">
 		<div id="content">
-			<div id="bio">
-				<h2>About Me</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate labore earum, voluptas nisi harum sed odit nostrum, modi, placeat excepturi, hic explicabo? Soluta praesentium blanditiis aliquid eius dolorum ipsam minima nam distinctio! Ipsum, recusandae sapiente?</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates soluta minima modi numquam laboriosam eos.</p>
-			</div>
-			
+				<div class="viewAllWrapper">
+					<a href="#!" id="viewAll">View All Images</a>
+				</div>
+				<div id="bio">
+					<h2>About Me</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate labore earum, voluptas nisi harum sed odit nostrum, modi, placeat excepturi, hic explicabo? Soluta praesentium blanditiis aliquid eius dolorum ipsam minima nam distinctio! Ipsum, recusandae sapiente?</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates soluta minima modi numquam laboriosam eos.</p>
+				</div>
+				
 
-			<div id="contact" class="on">
-				<h2>Contact Me</h2>
-				<form action="">
-					<input type="text" placeholder="Name">
-					<input type="text" placeholder="Email">
-					<input type="text" placeholder="Items Interested in">
-				</form>
+				<div id="contact" class="on">
+					<h2>Contact Me</h2>
+					<form action="">
+						<input type="text" placeholder="Name" id="name"><input type="text" placeholder="Phone" id="phone">
+						<input type="text" placeholder="Email" id="email">
+						<textarea name="message" id="message" placeholder="Your Message"></textarea>
+						<button id="submit">Send</button>
+					</form>
+				</div>
 			</div>
-		</div>
 	</section>
 </div>
-	<script src="js/test.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/listeners.js" ></script>
 	<script src="js/instafeed.js"></script>
